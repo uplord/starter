@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "__component": "blocks.section",
+    "section": {
+      "id": 1,
+      "title": "Test",
+      "image": {
+        "data": null
+      },
+      "button": []
+    }
+  }
+]
