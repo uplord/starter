@@ -1,0 +1,49 @@
+.button-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+
+  @media (min-width: 641px) {
+    justify-content: flex-start;
+  }
+
+  &.stacked {
+    flex-direction: column;
+  }
+
+  &.not-stacked-m {
+
+    @media (max-width: 740px) {
+      flex-direction: row;
+    }
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  &.group {
+    flex-wrap: nowrap;
+    gap: 0;
+
+    .button {
+
+      &:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+      }
+
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@mixin default-button {
+  background: var(--button-color);
+  border-color: var(--border-color);
+  color: var(--button-color-text);
+
+  &:hover {
+    background: var(--button-color-hover);
+  }
+
+  &:focus {
+    background: var(--button-color-hover);
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+
+    .dark & {
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
+    }
+  }
+}
+
+@mixin primary-button {
+  background: var(--primary-color);
+  border-color: transparent;
+  color: var(--primary-color-text);
+
+  &:hover {
+    background: var(--primary-color-hover);
+  }
+
+  &:focus {
+    background: var(--primary-color-hover);
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+
+    .dark & {
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
+    }
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 26px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  padding: 9px 16px;
+  height: 48px;
+  transition: all 0.3s ease;
+  @include default-button;
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+    height: 48px;
+    padding: 9px 24px;
+  }
+
+  @media (max-width: 440px) {
+    //width: 100%;
+  }
+
+  &.primary {
+    @include primary-button;
+  }
+
+  &.link {
+    background: transparent;
+    border-color: transparent;
+
+    &.large {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    &:hover {
+      background: transparent;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      background: none;
+      text-decoration: underline;
+      box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+
+      .dark & {
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
+      }
+    }
+  }
+
+  &.white {
+    background: #FFF;
+    color: #000;
+
+    &:hover {
+      background: #EEE;
+    }
+  }
+
+  &.large {
+    font-size: 18px;
+    height: 56px;
+    padding: 12px 32px;
+    border-radius: 8px;
+  }
+
+  &.small {
+    font-size: 14px;
+    height: 40px;
+    padding: 5px 16px;
+    border-radius: 8px;
+  }
+
+  &.full {
+    width: 100%;
+  }
+}

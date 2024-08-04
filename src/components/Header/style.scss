@@ -1,0 +1,160 @@
+.homepage header {
+  position: relative;
+  margin-bottom: -78px;
+  z-index: 1000;
+
+  + main .banner .text-content {
+    padding-top: 78px;
+
+    .floating-image {
+      margin-top: 39px;
+
+      @media (max-width: 640px) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.sticky #page > header {
+
+  @media (min-width: 741px) {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+}
+
+#page > header {
+
+  .scrolled & {
+    background: var(--header-background);
+    border-bottom-color: var(--border-color);
+  }
+}
+
+header {
+  color: var(--header-color);
+  transition: color 0.6s ease-out, border 0.3s ease;
+  border-bottom: 1px solid transparent;
+
+  &.light-header {
+    color: #FFF;
+  }
+
+  &.dark-header {
+    color: #000;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo {
+    color: inherit;
+    font-family: var(--header-font);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+    margin-right: auto;
+
+    .m {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      font-size: 26px;
+      margin-right: 8px;
+      background: var(--primary-color);
+      color: #FFF;
+      border-radius: 20px;
+      letter-spacing: 1px;
+    }
+
+    .red {
+      color: var(--primary-color);
+    }
+  }
+
+  .checkbox.switch input[type="checkbox"] {
+
+    &:checked {
+      background: #FFFFFF;
+      border-color: #FFFFFF;
+
+      &:hover:not([disabled]) + label {
+        background: #FFFFFF;
+        border-color: #FFFFFF;
+      }
+
+      & + label {
+        background: #FFFFFF;
+        border-color: #FFFFFF;
+
+        &:after {
+          background: #C6C8C7;
+        }
+      }
+    }
+
+    & + label {
+      background: #171717;
+      border-color: #171717;
+
+      &:hover:not([disabled]) + label {
+        background: #171717;
+        border-color: #171717;
+      }
+
+      &:before {
+        content: '';
+      }
+
+      &:after {
+        background: #313131;
+      }
+    }
+  }
+
+  .navigation {
+    margin-right: auto;
+
+    @media (max-width: 740px) {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      list-style: none;
+
+      &:first-child {
+
+        @media (max-width: 840px) and (min-width: 741px) {
+          display: none;
+        }
+      }
+
+      a {
+        position: relative;
+        display: inline-flex;
+        padding: 10px 16px;
+        margin: 16px 0;
+        font-size: 18px;
+        line-height: 26px;
+
+        &:hover,
+        &:focus {
+          border-radius: 8px;
+          background: var(--header-hover);
+        }
+      }
+    }
+  }
+}

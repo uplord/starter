@@ -2,8 +2,15 @@
   <main>
     <section>
       <div class="inner-container">
-        <h1>Homepage</h1>
-        <component v-for="(section, key) in sections" :is="getComponent(section.__component)" :data="section" />
+        <component
+          v-if="sections"
+          v-for="(section, key) in sections"
+          :key="key"
+          :is="getComponent(section.__component)"
+          :data="section"
+          animate="true"
+          :visible="vsibleSections[key].visible"
+        />
       </div>
     </section>
   </main>
@@ -25,40 +32,51 @@ const componentMapping = {
   'blocks.section': BlockSection,
 };
 
-function getComponent(componentName) {
-  return componentMapping[componentName] || null;
-}
+const loading = ref(false)
 
 const sections = ref([]);
+const id = 1;
 
-const populate = 'populate[sections][populate][slide][populate]=*&populate[sections][populate][section][populate]=*';
+// Slide
+let populate = 'populate[sections][populate][slide][populate][image]=*';
+populate += '&populate[sections][populate][slide][populate][buttons][populate]=file';
+// Section
+populate += '&populate[sections][populate][section][populate][image]=*';
+populate += '&populate[sections][populate][section][populate][buttons][populate]=file';
 
-// const { data, error } = await useAsyncData('page', () => 
-//   $fetch(`/api/page?page=1&populate=${encodeURIComponent(populate)}`)
-// );
+await useAsyncData('page', () => pagesStore.fetchPage(id, populate));
+sections.value = page.value.attributes.sections
 
-// if (!error.value) {
-//   sections.value = data.value;
-// }
-const data = ref(null)
-const response = await fetch('/api/data')
-data.value = await response.json()
-console.log('json', data.value)
+console.log(sections.value)
 
-const config = useRuntimeConfig();
-const strapiUrl = `${config.public.strapiApiUrl}/pages/1?${populate}`;
+const vsibleSections = ref(Array.from({ length: sections.value.length }, () => ({ visible: false })))
 
-try {
-  const response = await $fetch(strapiUrl, {
-    headers: {
-      Authorization: `Bearer ${config.public.strapiApiKey}`,
+const getComponent = (componentName) => componentMapping[componentName] || null;
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            loading.value = true
+            vsibleSections.value[entry.target.index].visible = true
+            console.log('visible - ' + entry.target.index)
+          }, index * 1200)
+          observer.unobserve(entry.target)
+        }
+      })
     },
-  });
-  const sections = response.data.attributes.sections;
-  console.log('Get from api');
-  console.log('api', sections)
-} catch (error) {
-    console.log('Get from cache');
-}
+    {
+      threshold: 0,
+      rootMargin: "0px 0px -100px 0px"
+    }
+  )
+
+  document.querySelectorAll(".js_section").forEach(function (el, index) {
+    el.index = index
+    observer.observe(el)
+  })
+})
 
 </script>

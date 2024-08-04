@@ -22,7 +22,7 @@ export const usePagesStore = defineStore("pagesStore", () => {
           },
         });
         const data = await response.json();
-        state.page = data.data[0];
+        state.page = data.data;
       } catch (error) {
         console.error("Failed to fetch page:", error);
       }
