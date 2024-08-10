@@ -55,7 +55,6 @@ export const usePagesStore = defineStore("pagesStore", () => {
           response = await fetch(`/api/get-page?id=${id}`);
           if (!response.ok) throw new Error('Failed to fetch local JSON data.');
           data = await response.json();
-          // data.image = 'ipx';
           state.page = data;
         } catch (localError) {
           console.error("Failed to fetch page from local JSON:", localError);

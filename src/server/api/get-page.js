@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import { defineEventHandler } from 'h3';
+import path from 'path';
 
 const updateImageProvider = (data, newProvider) => {
   // Recursively traverse the JSON to find and update all images
@@ -31,8 +32,7 @@ export default defineEventHandler(async (event) => {
   const id = query.id;
 
   try {
-    const filePath = 'src/data/page-' + id + '.json';
-
+    const filePath = path.resolve(process.cwd(), 'src/public/data/page-' + id + '.json');
     const data = await fs.readFile(filePath, 'utf-8');
     const jsonData = JSON.parse(data);
 

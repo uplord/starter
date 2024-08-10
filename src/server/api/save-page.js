@@ -1,12 +1,13 @@
 import { promises as fs } from 'fs';
 import { defineEventHandler, readBody } from 'h3';
+import path from 'path';
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const body = await readBody(event);
 
   // Define the path to the JSON file
-  const filePath = 'src/data/page-' + body.id + '.json';
+  const filePath = path.resolve(process.cwd(), 'src/public/data/page-' + id + '.json');
   const baseUrl = config.public.siteUrl;
   const strapiUrl = config.public.strapiUrl;
 
