@@ -23,9 +23,6 @@ export default defineNuxtConfig({
   },
   image: {
     provider: 'ipx',
-    strapi: {
-      baseURL: process.env.STRAPI_URL || 'http://localhost:1337'
-    },
   },
   modules: [
     "nuxt-icons",
@@ -40,6 +37,7 @@ export default defineNuxtConfig({
       strapiApiKey: process.env.STRAPI_API_KEY,
       strapiApiUrl: process.env.STRAPI_API_URL || 'http://localhost:1337/api',
       strapiUrl: process.env.STRAPI_URL || 'http://localhost:1337',
+      devMode: process.env.DEV_MODE || 'false',
     },
   },
   srcDir: "src/",
