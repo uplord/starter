@@ -23,6 +23,9 @@ export default defineNuxtConfig({
   },
   image: {
     provider: 'ipx',
+    strapi: {
+      baseURL: process.env.STRAPI_URL || 'http://localhost:1337'
+    },
   },
   modules: [
     "nuxt-icons",

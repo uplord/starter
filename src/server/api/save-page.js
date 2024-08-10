@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
             updateUrls(data[key]);
           } else if (key === 'url' && typeof data[key] === 'string') {
             if (data[key].startsWith('/uploads/')) {
-              // data[key] = baseUrl + data[key];
+              data[key] = '/assets' + data[key];
             }
           }
         }
