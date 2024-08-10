@@ -47,8 +47,6 @@ populate += '&populate[sections][populate][section][populate][buttons][populate]
 await useAsyncData('page', () => pagesStore.fetchPage(id, populate));
 sections.value = page.value.attributes.sections
 
-console.log(sections.value)
-
 const vsibleSections = ref(Array.from({ length: sections.value.length }, () => ({ visible: false })))
 
 const getComponent = (componentName) => componentMapping[componentName] || null;
@@ -61,7 +59,6 @@ onMounted(() => {
           setTimeout(() => {
             loading.value = true
             vsibleSections.value[entry.target.index].visible = true
-            console.log('visible - ' + entry.target.index)
           }, index * 1200)
           observer.unobserve(entry.target)
         }

@@ -25,7 +25,7 @@
               <div v-if="data.section.content" class="inner-container">
                 <StrapiBlocks :content="data.section.content" />
               </div>
-              <BaseButtons v-if="data.section.buttons.length > 0" :buttons="data.section.buttons" />
+              <BaseButtons v-if="data.section.buttons" :buttons="data.section.buttons" />
             </div>
           </div>
         </div>

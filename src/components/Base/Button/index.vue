@@ -10,7 +10,7 @@
 
   <a
     v-else-if="button.url || button.file.data"
-    :href="button.url ? button.url : config.public.strapiUrl + button.file.data.attributes.url"
+    :href="button.url ? button.url : (button.file.data.attributes.provider == 'ipx' ? button.file.data.attributes.url : config.public.strapiUrl + button.file.data.attributes.url)"
     class="button"
     :class="button.class"
     :target="button.target"

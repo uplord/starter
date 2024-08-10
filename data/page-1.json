@@ -1,0 +1,221 @@
+{
+  "id": 1,
+  "attributes": {
+    "title": "Homepage",
+    "createdAt": "2024-08-02T13:16:15.397Z",
+    "updatedAt": "2024-08-04T13:18:24.237Z",
+    "publishedAt": "2024-08-02T13:16:53.025Z",
+    "slug": "home",
+    "sections": [
+      {
+        "id": 1,
+        "__component": "blocks.banner",
+        "slide": [
+          {
+            "id": 1,
+            "title": "A Senior Front End Developer based in Dundee, Scotland",
+            "leading": "Hi, I'm Michael",
+            "subtitle": "With 8 years in the industry creating websites",
+            "floating_image": true,
+            "class": null,
+            "image": {
+              "data": {
+                "id": 1,
+                "attributes": {
+                  "name": "me.jpeg",
+                  "alternativeText": null,
+                  "caption": null,
+                  "width": 748,
+                  "height": 747,
+                  "formats": {
+                    "thumbnail": {
+                      "name": "thumbnail_me.jpeg",
+                      "hash": "thumbnail_me_f50ea99f63",
+                      "ext": ".jpeg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 156,
+                      "height": 156,
+                      "size": 4.63,
+                      "sizeInBytes": 4632,
+                      "url": "/uploads/thumbnail_me_f50ea99f63.jpeg"
+                    },
+                    "small": {
+                      "name": "small_me.jpeg",
+                      "hash": "small_me_f50ea99f63",
+                      "ext": ".jpeg",
+                      "mime": "image/jpeg",
+                      "path": null,
+                      "width": 500,
+                      "height": 499,
+                      "size": 36.32,
+                      "sizeInBytes": 36319,
+                      "url": "/uploads/small_me_f50ea99f63.jpeg"
+                    }
+                  },
+                  "hash": "me_f50ea99f63",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "size": 59.69,
+                  "url": "/uploads/me_f50ea99f63.jpeg",
+                  "previewUrl": null,
+                  "provider": "local",
+                  "provider_metadata": null,
+                  "createdAt": "2024-08-02T13:52:19.377Z",
+                  "updatedAt": "2024-08-02T14:44:00.548Z"
+                }
+              }
+            },
+            "buttons": [
+              {
+                "id": 6,
+                "text": "Get in touch",
+                "url": "mailto:michael@uplord.co.uk",
+                "class": "primary large",
+                "target": null,
+                "file": {
+                  "data": null
+                }
+              },
+              {
+                "id": 7,
+                "text": "Download CV",
+                "url": null,
+                "class": "link large",
+                "target": "_blank",
+                "file": {
+                  "data": {
+                    "id": 2,
+                    "attributes": {
+                      "name": "cv.pdf",
+                      "alternativeText": null,
+                      "caption": null,
+                      "width": null,
+                      "height": null,
+                      "formats": null,
+                      "hash": "cv_e984145c12",
+                      "ext": ".pdf",
+                      "mime": "application/pdf",
+                      "size": 3705.95,
+                      "url": "/uploads/cv_e984145c12.pdf",
+                      "previewUrl": null,
+                      "provider": "local",
+                      "provider_metadata": null,
+                      "createdAt": "2024-08-03T09:34:12.801Z",
+                      "updatedAt": "2024-08-03T09:34:12.801Z"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "__component": "blocks.section",
+        "section": {
+          "id": 1,
+          "title": " Front End Development",
+          "subtitle": "About Michael Allen",
+          "content": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "text": "I'm an experienced Front End Developer who has excellent collaboration, organization and teamwork skills with a keen attention to detail. Passionate about developing in HTML, CSS and JavaScript and always open to exploring new technologies. Over the last 8 years I have dealt with a variety of small and large clients. This has helped by my strong analytical, debugging and problem-solving skills to create exceptional websites."
+                }
+              ]
+            }
+          ],
+          "class": null,
+          "image": {
+            "data": {
+              "id": 3,
+              "attributes": {
+                "name": "about.png",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1320,
+                "height": 1628,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_about.png",
+                    "hash": "thumbnail_about_36e7b0d8e6",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 126,
+                    "height": 156,
+                    "size": 50.91,
+                    "sizeInBytes": 50908,
+                    "url": "/uploads/thumbnail_about_36e7b0d8e6.png"
+                  },
+                  "small": {
+                    "name": "small_about.png",
+                    "hash": "small_about_36e7b0d8e6",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 405,
+                    "height": 500,
+                    "size": 454.43,
+                    "sizeInBytes": 454429,
+                    "url": "/uploads/small_about_36e7b0d8e6.png"
+                  },
+                  "medium": {
+                    "name": "medium_about.png",
+                    "hash": "medium_about_36e7b0d8e6",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 608,
+                    "height": 750,
+                    "size": 996.04,
+                    "sizeInBytes": 996037,
+                    "url": "/uploads/medium_about_36e7b0d8e6.png"
+                  },
+                  "large": {
+                    "name": "large_about.png",
+                    "hash": "large_about_36e7b0d8e6",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 811,
+                    "height": 1000,
+                    "size": 1743.66,
+                    "sizeInBytes": 1743656,
+                    "url": "/uploads/large_about_36e7b0d8e6.png"
+                  }
+                },
+                "hash": "about_36e7b0d8e6",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 809.49,
+                "url": "/uploads/about_36e7b0d8e6.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-08-04T13:17:22.369Z",
+                "updatedAt": "2024-08-04T13:17:22.369Z"
+              }
+            }
+          },
+          "buttons": [
+            {
+              "id": 5,
+              "text": "Get in touch",
+              "url": "michael@uplord.co.uk",
+              "class": "primary",
+              "target": null,
+              "file": {
+                "data": null
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -51,7 +51,7 @@
             <h2 v-if="key != 0" class="h1">{{ slide.title }}</h2>
             <h2 v-if="key == 0" class="h3">{{ slide.subtitle }}</h2>
             <h3 v-if="key != 0">{{ slide.subtitle }}</h3>
-            <BaseButtons v-if="slide.buttons.length > 0" :buttons="slide.buttons" />
+            <BaseButtons v-if="slide.buttons" :buttons="slide.buttons" />
           </div>
 
         </div>

@@ -1,6 +1,6 @@
 <template>
   <NuxtImg
-    provider="strapi"
+    :provider="image.data.attributes.provider == 'ipx' ? image.data.attributes.provider : 'strapi'"
     :src="image.data.attributes.url"
     format="webp"
     fit="outside"
