@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event);
 
   // Define the path to the JSON file
-  const filePath = 'data/page-' + body.id + '.json';
+  const filePath = 'src/data/page-' + body.id + '.json';
   const baseUrl = config.public.siteUrl;
   const strapiUrl = config.public.strapiUrl;
 

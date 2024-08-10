@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
   const id = query.id;
 
   try {
-    const filePath = 'data/page-' + id + '.json';
+    const filePath = 'src/data/page-' + id + '.json';
 
     const data = await fs.readFile(filePath, 'utf-8');
     const jsonData = JSON.parse(data);
