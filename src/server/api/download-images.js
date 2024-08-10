@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
   const baseUrl = config.public.siteUrl;
   const strapiUrl = config.public.strapiUrl;
-  const outputDir = path.join(process.cwd(), 'src/public/uploads');
+  const outputDir = path.join(process.cwd(), 'src/public/assets/uploads');
 
   await fs.mkdir(outputDir, { recursive: true });
 
@@ -53,7 +53,7 @@ export default defineEventHandler(async (event) => {
 
     for (const imagePath of imageUrls) {
       // const url = `${baseUrl}${imagePath}`;
-      const url = imagePath.replace(baseUrl, strapiUrl)
+      const url = strapiUrl + imagePath.replace(baseUrl, '')
       const outputPath = path.join(outputDir, path.basename(imagePath));
 
       try {
